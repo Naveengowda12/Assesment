@@ -264,12 +264,6 @@
             font-weight: 600;
         }
         
-        .loan-actions {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-        }
-        
         .empty-state {
             text-align: center;
             padding: 40px 20px;
@@ -673,7 +667,10 @@
             
             setTimeout(() => {
                 document.getElementById('formMessage').innerHTML = '';
-                showTab(new Event('click', { bubbles: true }), 'home');
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.getElementById('home').classList.add('active');
+                document.querySelectorAll('.tab-btn')[0].classList.add('active');
                 loadAllLoans();
             }, 1500);
         }
