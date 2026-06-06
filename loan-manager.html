@@ -390,6 +390,27 @@
             margin-bottom: 15px;
             border-left: 4px solid #667eea;
         }
+        
+        .info-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 12px;
+            margin-bottom: 12px;
+            border-radius: 6px;
+        }
+        
+        .info-card-title {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+        
+        .info-card-desc {
+            font-size: 0.9em;
+            color: #555;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body>
@@ -402,7 +423,7 @@
         <div class="tabs">
             <button class="tab-btn active" onclick="showTab(event, 'home')">🏠 Home</button>
             <button class="tab-btn" onclick="showTab(event, 'create')">➕ New</button>
-            <button class="tab-btn" onclick="showTab(event, 'info')">ℹ️ Info</button>
+            <button class="tab-btn" onclick="showTab(event, 'info')">⚙️ Settings</button>
         </div>
         
         <div class="content">
@@ -461,18 +482,57 @@
                 <div id="formMessage"></div>
             </div>
             
-            <!-- INFO TAB -->
+            <!-- SETTINGS TAB -->
             <div id="info" class="tab-content">
-                <h3 style="margin-bottom: 15px;">How to Use</h3>
-                <div style="font-size: 0.95em; line-height: 1.6; color: #555;">
-                    <p><strong>📌 Create Loan:</strong> Fill form with borrower details and click Create</p>
-                    <p><strong>📋 View Loans:</strong> Select from dropdown on Home tab</p>
-                    <p><strong>👁️ View Details:</strong> Full loan details and payment history</p>
-                    <p><strong>✏️ Edit Details:</strong> Edit loan information in details view</p>
-                    <p><strong>🔄 Change Status:</strong> Toggle between Active and Closed status</p>
-                    <p><strong>✅ Mark Payment:</strong> Check monthly payments as received</p>
-                    <p><strong>🗑️ Delete:</strong> Delete loan when needed</p>
-                    <p style="margin-top: 20px; color: #999; font-size: 0.9em;"><strong>💾 Data:</strong> All saved locally on your browser</p>
+                <h3 style="margin-bottom: 20px;">⚙️ Loan Settings & Features</h3>
+                
+                <div class="info-card">
+                    <div class="info-card-title">✏️ Edit Loan Details</div>
+                    <div class="info-card-desc">
+                        Edit borrower name, loan amount, monthly interest rate, notes, and status information. Select a loan and modify any details needed.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">🔄 Check & Change Status</div>
+                    <div class="info-card-desc">
+                        Change loan status between Active and Closed. Active loans can be edited, closed loans can be deleted.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">💰 Track Monthly Interest</div>
+                    <div class="info-card-desc">
+                        View monthly interest for each payment. Check the checkbox when monthly interest is received. The system auto-calculates total received amount.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">📋 Add New Loan</div>
+                    <div class="info-card-desc">
+                        Fill all required fields including borrower name, loan amount, monthly interest, total agreement months, start date, and optional notes.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">📊 View Loan Summary</div>
+                    <div class="info-card-desc">
+                        See complete loan overview with loan amount, total expected, total received, and pending amounts in one place.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">🗑️ Delete Loan</div>
+                    <div class="info-card-desc">
+                        Delete any loan permanently. The loan and all its payment records will be removed from the system.
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-card-title">💾 Auto Save</div>
+                    <div class="info-card-desc">
+                        All data is automatically saved locally on your browser. No internet required after first load.
+                    </div>
                 </div>
             </div>
         </div>
